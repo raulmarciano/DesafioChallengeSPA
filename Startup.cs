@@ -30,6 +30,7 @@ namespace DesafioChallengeSPA
         {
 
             services.AddControllers();
+            services.AddDbContext<DataContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("connectionString")));
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "DesafioChallengeSPA", Version = "v1" });
