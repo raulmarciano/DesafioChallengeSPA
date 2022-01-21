@@ -26,7 +26,7 @@ namespace DesafioChallengeSPA.Controllers
             int id,
             [FromServices]DataContext context)
         {
-            var clientes = await context.Clientes.AsNoTracking().FirstOrDefaultAsync(c => c.Id == id);
+            var clientes = await context.Clientes.Include(p => p.Profissao).AsNoTracking().FirstOrDefaultAsync(c => c.Id == id);
             return Ok(clientes);
         }
 
