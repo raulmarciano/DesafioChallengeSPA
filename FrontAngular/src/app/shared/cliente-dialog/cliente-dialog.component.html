@@ -1,0 +1,37 @@
+<h1 *ngIf="!isChange" mat-dialog-title>Cadastro de Cliente</h1>
+<h1 *ngIf="isChange" mat-dialog-title>Edição de Cliente</h1>
+<div mat-dialog-content>
+  <mat-form-field appearance="fill">
+    <mat-label>Nome</mat-label>
+    <input matInput maxlength="30" [(ngModel)]="data.nome">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Sobrenome</mat-label>
+    <input matInput maxlength="60" [(ngModel)]="data.sobrenome">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>CPF</mat-label>
+    <input matInput type="number" [(ngModel)]="data.cpf">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Data de Nascimento</mat-label>
+    <input matInput type="date" [(ngModel)]="data.dataNascimento">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Idade</mat-label>
+    <input matInput type="number" [(ngModel)]="data.idade">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Profissão</mat-label>
+    <mat-select>
+      <mat-option *ngFor="let profissao of profissoes" [value]="profissao.id">
+        {{profissao.nome}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancelar</button>
+  <button *ngIf="!isChange" mat-button [mat-dialog-close]="data" cdkFocusInitial>Cadastrar</button>
+  <button *ngIf="isChange" mat-button [mat-dialog-close]="data" cdkFocusInitial>Editar</button>
+</div>
