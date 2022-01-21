@@ -9,5 +9,8 @@ Subir o banco com Docker
 Executar as migrations da API CLI
 ```> dotnet ef database update```
 
+Executar a api
+```> dotnet run```
+
 Executar o Front no CLI
 ```> ng serve```
