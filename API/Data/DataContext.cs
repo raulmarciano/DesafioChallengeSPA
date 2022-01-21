@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using DesafioChallengeSPA.Model;
+using DesafioChallengeSPA.Models;
 
 namespace DesafioChallengeSPA.Data
 {

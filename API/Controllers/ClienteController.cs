@@ -1,7 +1,7 @@
 using System;
 using System.Threading.Tasks;
 using DesafioChallengeSPA.Data;
-using DesafioChallengeSPA.Model;
+using DesafioChallengeSPA.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 

@@ -2,7 +2,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace DesafioChallengeSPA.Model
+namespace DesafioChallengeSPA.Models
 {
     [Table("Cliente")]
     public class Cliente
@@ -25,7 +25,6 @@ namespace DesafioChallengeSPA.Model
         [Required(ErrorMessage = "Este campo é obrigatório")]
         [MaxLength(11, ErrorMessage = "Este campo deve conter 11 caracteres")]
         [MinLength(11, ErrorMessage = "Este campo deve conter 11 caracteres")]
-        [StringLength(11, ErrorMessage = "Este campo deve conter 11 caracteres")]
         [DataType("NVARCHAR(11)")]
         public string CPF { get; set; }
 
@@ -38,5 +37,7 @@ namespace DesafioChallengeSPA.Model
 
         [Required(ErrorMessage = "Este campo é obrigatório")]
         public int ProfissaoId { get; set; }
+
+        public Profissao Profissao { get; set; }
     }
 }
