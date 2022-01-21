@@ -1,5 +1,12 @@
 # Desafio Challenge SPA
 
+Desafio para Fullstack utilizando:
+
+API ASP.NET Core 5.0
+Entity Framework Core Code First
+SQL Server
+Angular 13
+
 ## Passos para executar
 
 Subir o banco com Docker
