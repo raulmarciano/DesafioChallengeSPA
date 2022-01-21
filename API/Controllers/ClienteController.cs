@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DesafioChallengeSPA.Controllers
 {
+    [Route("clientes")]
     public class ClienteController : ControllerBase
     {
         [HttpGet]
