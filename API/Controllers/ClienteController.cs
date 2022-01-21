@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using DesafioChallengeSPA.Data;
 using DesafioChallengeSPA.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
 namespace DesafioChallengeSPA.Controllers
@@ -12,10 +13,10 @@ namespace DesafioChallengeSPA.Controllers
     {
         [HttpGet]
         [Route("")]
-        public async Task<ActionResult<Cliente>> Get(
+        public async Task<ActionResult<List<Cliente>>> Get(
             [FromServices]DataContext context)
         {
-            var clientes = await context.Clientes.AsNoTracking().ToListAsync();
+            var clientes = await context.Clientes.Include(p => p.Profissao).AsNoTracking().ToListAsync();
             return Ok(clientes);
         }
 
